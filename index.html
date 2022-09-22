@@ -1,0 +1,122 @@
+<html class="a-fullscreen">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <meta
+      aframe-injected=""
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui,viewport-fit=cover"
+    />
+    <meta aframe-injected="" name="mobile-web-app-capable" content="yes" />
+    <meta aframe-injected="" name="theme-color" content="black" />
+
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    
+    <title>Blob Ghost</title>
+
+  </head>
+  <body>
+    <a-scene
+      background="color: #D3D3D3"
+      fog="type: exponential; density: 0.12; color: #696969;"
+      animation="property: fog.color; dur: 7000;
+                       from: #696969; to: #fff;
+                       loop: true; dir: alternate"
+      inspector=""
+      keyboard-shortcuts=""
+      screenshot=""
+      vr-mode-ui=""
+      device-orientation-permission-ui=""
+    >
+      <a-assets>
+        <a-asset-item id="ghost" src="/BlobGhostFloat.gltf"> </a-asset-item>
+      </a-assets>
+
+      <!-- object -->
+      <a-entity
+        position="0 -0.7 1.5"
+        gltf-model="#ghost"
+        scale="0.2 0.2 0.2"
+        animation-mixer=""
+      >
+      </a-entity>
+      
+      <!-- Lights -->
+      <a-light
+        type="point"
+        intensity="0.5"
+        position="-0.5 0 0"
+        light=""
+      ></a-light>
+
+      <a-light
+        type="point"
+        intensity="0.5"
+        position="0.5 0 0"
+        light=""
+      ></a-light>
+
+      <a-light
+        type="point"
+        intensity="0.5"
+        position="0.5 0 2.5"
+        light=""
+      ></a-light>
+
+      <a-light
+        type="ambient"
+        intensity="0.5"
+        position="-1 0 0"
+        light=""
+      ></a-light>
+
+      <!-- <a-light
+        type="point"
+        intensity="1"
+        position="0.5 0 0"
+        light=""
+      ></a-light> -->
+
+      <a-entity 
+        position="0 0.2 0.3" 
+        rotation="-35 180 0"
+        >
+        <a-camera
+          camera=""
+          position=""
+          rotation=""
+          look-controls=""
+          wasd-controls=""
+        >
+        </a-camera>
+      </a-entity>
+
+      <canvas
+        class="a-canvas a-grab-cursor"
+        data-aframe-canvas="true"
+        width="1264"
+        height="961"
+        style=""
+      ></canvas>
+
+      <div class="a-loader-title" style="display: none"></div>
+      <div class="a-enter-vr" aframe-injected="">
+        <button
+          class="a-enter-vr-button"
+          title="Enter VR mode with a headset or fullscreen mode on a desktop. Visit https://webvr.rocks or https://webvr.info for more information."
+          aframe-injected=""
+        ></button>
+      </div>
+      <div class="a-enter-ar a-hidden" aframe-injected="">
+        <button
+          class="a-enter-ar-button"
+          title="Enter AR mode with a headset or handheld device. Visit https://webvr.rocks or https://webvr.info for more information."
+          aframe-injected=""
+        ></button>
+      </div>
+      <div class="a-orientation-modal a-hidden" aframe-injected="">
+        <button aframe-injected="">Exit VR</button>
+      </div>
+    </a-scene>
+  </body>
+</html>
